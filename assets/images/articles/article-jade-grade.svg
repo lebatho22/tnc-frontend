@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title">
+  <title id="title">Giải mã phỉ thúy A B C</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080b0d"/>
+      <stop offset=".62" stop-color="#0d3654"/>
+      <stop offset="1" stop-color="#1a5276"/>
+    </linearGradient>
+    <radialGradient id="jade" cx="34%" cy="24%" r="70%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".55" stop-color="#abc4d8"/>
+      <stop offset="1" stop-color="#466b7f"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#bg)"/>
+  <rect x="300" y="250" width="200" height="128" rx="18" fill="#050607"/>
+  <circle cx="400" cy="224" r="128" fill="none" stroke="url(#jade)" stroke-width="50"/>
+  <circle cx="590" cy="330" r="94" fill="url(#jade)" opacity=".9"/>
+  <circle cx="400" cy="224" r="78" fill="none" stroke="#fff" stroke-width="1" opacity=".3"/>
+  <path d="M620 110 C720 126 790 190 820 290" fill="none" stroke="#c9a84c" stroke-width="2" opacity=".42"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title">
+  <title id="title">Mặt bài phỉ thúy</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d3654"/>
+      <stop offset=".55" stop-color="#1a5276"/>
+      <stop offset="1" stop-color="#e8e0d0"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#abc4d8"/>
+      <stop offset=".5" stop-color="#7dc4b8"/>
+      <stop offset="1" stop-color="#2f8263"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#bg)"/>
+  <path d="M280 150 C250 260 296 384 390 428 C486 380 516 250 466 150 Z" fill="url(#stone)" opacity=".9"/>
+  <path d="M500 128 C470 248 522 392 626 438 C730 386 760 244 704 128 Z" fill="url(#stone)" opacity=".82"/>
+  <circle cx="375" cy="166" r="18" fill="none" stroke="#c9a84c" stroke-width="8"/>
+  <circle cx="606" cy="146" r="18" fill="none" stroke="#c9a84c" stroke-width="8"/>
+</svg>

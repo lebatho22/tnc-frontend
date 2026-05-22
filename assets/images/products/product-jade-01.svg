@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title">
+  <title id="title">Vòng tay phỉ thúy băng lam</title>
+  <defs>
+    <radialGradient id="jade" cx="36%" cy="24%" r="72%">
+      <stop offset="0" stop-color="#edf7f5"/>
+      <stop offset=".55" stop-color="#abc4d8"/>
+      <stop offset="1" stop-color="#315e72"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="720" fill="#f5f0e8"/>
+  <circle cx="360" cy="360" r="208" fill="none" stroke="url(#jade)" stroke-width="74"/>
+  <ellipse cx="300" cy="250" rx="62" ry="26" fill="#fff" opacity=".32" transform="rotate(-24 300 250)"/>
+</svg>
