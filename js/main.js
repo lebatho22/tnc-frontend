@@ -5,10 +5,11 @@ const setupHeaderDocking = () => {
 
   let ticking = false
   const sync = () => {
-    document.body.classList.toggle(
-      'is-header-docked',
-      window.scrollY > 0,
-    )
+    const topbarHeight = topbar.offsetHeight || 0
+    const dockOffset = Math.max(0, topbarHeight - window.scrollY)
+
+    document.documentElement.style.setProperty('--tnc-dock-offset', `${dockOffset}px`)
+    document.body.classList.toggle('is-header-docked', dockOffset === 0)
     ticking = false
   }
 
@@ -249,11 +250,64 @@ const setupMegaMenus = () => {
   )
 }
 
+const setupShareActions = () => {
+  const currentUrl = window.location.href
+  const facebookLinks = document.querySelectorAll('[data-share-facebook]')
+  const copyButtons = document.querySelectorAll('[data-copy-link]')
+
+  facebookLinks.forEach((link) => {
+    const shareUrl = link.dataset.shareUrl || currentUrl
+    link.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`
+  })
+
+  const copyWithFallback = (value) => {
+    const textarea = document.createElement('textarea')
+    textarea.value = value
+    textarea.setAttribute('readonly', '')
+    textarea.style.position = 'fixed'
+    textarea.style.opacity = '0'
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    textarea.remove()
+  }
+
+  copyButtons.forEach((button) => {
+    const text = button.querySelector('[data-copy-text]')
+    const defaultLabel = button.dataset.copyLabel || text?.textContent || 'Sao chép link'
+    const successLabel = button.dataset.copySuccess || 'Đã sao chép'
+
+    button.addEventListener('click', async () => {
+      const url = button.dataset.copyUrl || currentUrl
+
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url)
+        } else {
+          copyWithFallback(url)
+        }
+
+        if (text) text.textContent = successLabel
+        window.setTimeout(() => {
+          if (text) text.textContent = defaultLabel
+        }, 1800)
+      } catch (error) {
+        copyWithFallback(url)
+        if (text) text.textContent = successLabel
+        window.setTimeout(() => {
+          if (text) text.textContent = defaultLabel
+        }, 1800)
+      }
+    })
+  })
+}
+
 setupHeaderDocking()
 setupSearchOverlay()
 setupMoreDrawer()
 setupSearchResultsPage()
 setupMegaMenus()
+setupShareActions()
 
 const heroSlider = document.querySelector('[data-hero-slider]')
 
@@ -262,8 +316,10 @@ if (heroSlider) {
   const dots = [...document.querySelectorAll('[data-hero-dot]')]
   const prevButton = document.querySelector('[data-hero-prev]')
   const nextButton = document.querySelector('[data-hero-next]')
+  const pauseButton = document.querySelector('[data-hero-pause]')
   let currentSlide = 0
   let timerId
+  let isAutoplayPaused = false
 
   const showSlide = (index) => {
     currentSlide = (index + slides.length) % slides.length
@@ -278,6 +334,7 @@ if (heroSlider) {
   }
 
   const startAutoplay = () => {
+    window.clearInterval(timerId)
     timerId = window.setInterval(() => {
       showSlide(currentSlide + 1)
     }, 5200)
@@ -285,6 +342,24 @@ if (heroSlider) {
 
   const restartAutoplay = () => {
     window.clearInterval(timerId)
+    if (!isAutoplayPaused) {
+      startAutoplay()
+    }
+  }
+
+  const setAutoplayPaused = (isPaused) => {
+    isAutoplayPaused = isPaused
+    pauseButton?.classList.toggle('is-paused', isPaused)
+    pauseButton?.setAttribute(
+      'aria-label',
+      isPaused ? 'Tiếp tục slideshow' : 'Tạm dừng slideshow',
+    )
+
+    if (isPaused) {
+      window.clearInterval(timerId)
+      return
+    }
+
     startAutoplay()
   }
 
@@ -303,6 +378,10 @@ if (heroSlider) {
   nextButton?.addEventListener('click', () => {
     showSlide(currentSlide + 1)
     restartAutoplay()
+  })
+
+  pauseButton?.addEventListener('click', () => {
+    setAutoplayPaused(!isAutoplayPaused)
   })
 
   startAutoplay()
@@ -353,6 +432,36 @@ if (productTabs) {
   })
 }
 
+const singleGalleryMain = document.querySelector('[data-single-gallery-main]')
+const singleGalleryThumbs = [...document.querySelectorAll('[data-single-thumb]')]
+
+if (singleGalleryMain && singleGalleryThumbs.length) {
+  singleGalleryThumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      const fullImage = thumb.dataset.full
+      if (!fullImage) return
+
+      singleGalleryMain.src = fullImage
+      singleGalleryMain.alt = thumb.dataset.alt || ''
+
+      singleGalleryThumbs.forEach((item) => {
+        item.classList.toggle('is-active', item === thumb)
+      })
+    })
+  })
+}
+
+const revealCalculatorResult = (section) => {
+  if (!section) return
+
+  section.hidden = false
+  section.setAttribute('aria-hidden', 'false')
+
+  window.requestAnimationFrame(() => {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
+}
+
 const braceletTool = document.querySelector('[data-bracelet-tool]')
 
 if (braceletTool) {
@@ -361,17 +470,20 @@ if (braceletTool) {
   const resultSection = document.querySelector('[data-bracelet-result]')
   const resultRange = document.querySelector('[data-result-range]')
   const resultTight = document.querySelector('[data-result-tight]')
+  const resultStandard = document.querySelector('[data-result-standard]')
   const resultComfy = document.querySelector('[data-result-comfy]')
   const resultMain = document.querySelector('[data-result-main]')
 
   const setResult = (size) => {
-    const tight = Math.max(48, Math.round(size - 1))
-    const comfy = Math.max(tight + 1, Math.round(size + 1))
+    const standard = Math.round(size)
+    const tight = Math.max(48, standard - 1)
+    const comfy = Math.max(tight + 1, standard + 1)
 
-    resultRange.textContent = `${tight} – ${comfy}`
+    resultRange.textContent = `vòng đũa ${tight}mm · vòng bản ${standard}mm`
     resultTight.textContent = `${tight}mm`
+    resultStandard.textContent = `${standard}mm`
     resultComfy.textContent = `${comfy}mm`
-    resultMain.textContent = String(comfy)
+    resultMain.textContent = String(standard)
   }
 
   const estimateSize = (panelId, form) => {
@@ -418,8 +530,121 @@ if (braceletTool) {
       const size = estimateSize(panel.dataset.braceletPanel, form)
 
       setResult(size)
-      resultSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      revealCalculatorResult(resultSection)
     })
+  })
+}
+
+const braceletCommunityForm = document.querySelector('[data-bracelet-community-form]')
+
+if (braceletCommunityForm) {
+  const couponPanel = braceletCommunityForm.querySelector('[data-bracelet-coupon]')
+  const couponCode = braceletCommunityForm.querySelector('[data-coupon-code]')
+  const couponCopy = braceletCommunityForm.querySelector('[data-coupon-copy]')
+  const errorMessage = braceletCommunityForm.querySelector('[data-community-error]')
+  const countLabel = braceletCommunityForm.querySelector('[data-community-count]')
+  const submitButton = braceletCommunityForm.querySelector('button[type="submit"]')
+  const endpoint = window.tncTheme?.restUrl ? `${window.tncTheme.restUrl}bracelet-community` : ''
+
+  const parseMeasurement = (value) => Number(String(value || '').replace(',', '.'))
+  const setCommunityError = (message = '') => {
+    if (!errorMessage) return
+
+    errorMessage.textContent = message
+    errorMessage.hidden = message === ''
+  }
+
+  braceletCommunityForm.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    setCommunityError()
+    if (couponPanel) couponPanel.hidden = true
+
+    const method = braceletCommunityForm.elements.method?.value
+    const measurement = parseMeasurement(braceletCommunityForm.elements.measurement?.value)
+    const currentSize = parseMeasurement(braceletCommunityForm.elements.current_size?.value)
+
+    if (!method || !measurement || !currentSize) {
+      setCommunityError('Vui lòng nhập đủ phương pháp đo, số đo và size vòng đang đeo.')
+      return
+    }
+
+    if (measurement <= 0 || currentSize <= 0) {
+      setCommunityError('Số đo cần lớn hơn 0.')
+      return
+    }
+
+    if (!endpoint) {
+      setCommunityError('Form này cần chạy trên WordPress và cấu hình Google Sheet trước khi phát mã giảm giá.')
+      return
+    }
+
+    submitButton?.setAttribute('disabled', 'disabled')
+
+    try {
+      const response = await window.fetch(endpoint, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          method,
+          measurement,
+          current_size: currentSize,
+          page_url: window.location.href,
+        }),
+      })
+      const payload = await response.json()
+
+      if (!response.ok) {
+        throw new Error(payload.message || 'Chưa gửi được dữ liệu. Vui lòng thử lại.')
+      }
+
+      if (couponCode && payload.coupon_code) {
+        couponCode.textContent = payload.coupon_code
+      }
+
+      if (countLabel && Number.isFinite(Number(payload.count))) {
+        countLabel.textContent = new Intl.NumberFormat('vi-VN').format(Number(payload.count))
+      }
+
+      couponPanel.hidden = false
+      couponPanel.setAttribute('aria-hidden', 'false')
+      couponPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    } catch (error) {
+      setCommunityError(error.message || 'Chưa gửi được dữ liệu. Vui lòng thử lại.')
+    } finally {
+      submitButton?.removeAttribute('disabled')
+    }
+  })
+
+  couponCopy?.addEventListener('click', async () => {
+    const code = couponCode?.textContent?.trim() || 'TNC5SIZE'
+    const defaultLabel = 'Sao chép mã'
+    const successLabel = 'Đã sao chép'
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(code)
+      } else {
+        const textarea = document.createElement('textarea')
+        textarea.value = code
+        textarea.setAttribute('readonly', '')
+        textarea.style.position = 'fixed'
+        textarea.style.opacity = '0'
+        document.body.appendChild(textarea)
+        textarea.select()
+        document.execCommand('copy')
+        textarea.remove()
+      }
+
+      couponCopy.textContent = successLabel
+      window.setTimeout(() => {
+        couponCopy.textContent = defaultLabel
+      }, 2200)
+    } catch (error) {
+      setCommunityError('Chưa thể sao chép tự động. Bạn có thể chọn và sao chép mã TNC5SIZE.')
+    }
   })
 }
 
@@ -439,8 +664,9 @@ if (beadTool) {
 
   const formatCm = (value) => `${value.toFixed(1).replace('.0', '')} cm`
   const formatDelta = (value) => {
-    const sign = value > 0 ? '+' : ''
-    return `${sign}${value.toFixed(1)}cm so với chu vi của bạn`
+    const absolute = Math.abs(value)
+    if (absolute < 0.15) return 'gần sát chu vi'
+    return value > 0 ? `dài hơn ${absolute.toFixed(1)}cm` : `ngắn hơn ${absolute.toFixed(1)}cm`
   }
 
   const setBeadResult = (wristCm, beadMm) => {
@@ -450,7 +676,7 @@ if (beadTool) {
     const lengths = counts.map((count) => (count * beadMm) / 10)
 
     wristLabel.textContent = `${wristCm.toString().replace('.', ',')}cm`
-    beadSizeLabel.textContent = `hạt ${beadMm.toString().replace('.', ',')}mm`
+    beadSizeLabel.textContent = `${beadMm.toString().replace('.', ',')}mm`
     tight.textContent = String(counts[0])
     best.textContent = String(counts[1])
     loose.textContent = String(counts[2])
@@ -474,7 +700,7 @@ if (beadTool) {
     if (!wristCm || !beadMm) return
 
     setBeadResult(wristCm, beadMm)
-    resultSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    revealCalculatorResult(resultSection)
   })
 }
 
@@ -572,9 +798,7 @@ if (ringTool) {
       if (!value) return
 
       updateRingResult(findNearest(value, mode))
-      document
-        .querySelector('[data-ring-result]')
-        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      revealCalculatorResult(document.querySelector('[data-ring-result]'))
     })
   })
 }

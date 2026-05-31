@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&subset=vietnamese&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../output.css" />
@@ -15,7 +15,7 @@
 
   <body class="bg-accent text-primary">
     <div class="tnc-topbar" data-topbar>
-      Tư vấn phỉ thúy Type A · Showroom Hà Nội
+      Tư vấn phỉ thúy <span lang="en">Type A</span> · Showroom Hà Nội
     </div>
     <header class="tnc-header" data-site-header>
       <div class="tnc-container tnc-header-inner">
@@ -25,10 +25,10 @@
         </a>
         <nav class="tnc-nav" aria-label="Điều hướng chính">
           <a href="../index.html" class="tnc-nav-link">Trang chủ</a>
-          <a href="./blog-archive.html" class="tnc-nav-link">Bài viết</a>
-          <a href="./size-tools.html" class="tnc-nav-link is-active">Công Cụ Đo Size</a>
-          <a href="./product-archive.html" class="tnc-nav-link">Cửa hàng</a>
-          <a href="./contact.html" class="tnc-nav-link">Liên Hệ</a>
+          <a href="./contact.html" class="tnc-nav-link">Liên hệ</a>
+          <a href="./product-archive.html" class="tnc-nav-link">Bộ sưu tập</a>
+          <a href="./blog-archive.html" class="tnc-nav-link">Kiến thức</a>
+          <a href="./size-tools.html" class="tnc-nav-link is-active">Công cụ đo size</a>
         </nav>
         <a class="tnc-desktop-search" href="#" aria-label="Tìm kiếm" data-search-open>
           <svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -101,15 +101,9 @@
 
           <div class="tnc-size-tool-cards">
             <article class="tnc-size-tool-card">
-              <div class="tnc-size-tool-visual">
+              <div class="tnc-size-tool-visual tnc-size-tool-visual-fill">
                 <span class="tnc-size-tool-name">Vòng Tay</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <path d="M12 6v3"></path>
-                  <path d="M12 15v3"></path>
-                  <path d="M6 12h3"></path>
-                  <path d="M15 12h3"></path>
-                </svg>
+                <img src="../assets/images/tools/card-cong-cu-do-size-vong-tay.png" alt="Công cụ đo size vòng tay phỉ thúy" />
               </div>
               <div class="tnc-size-tool-body">
                 <p class="tnc-size-tool-label">Bracelet sizer</p>
@@ -128,13 +122,7 @@
             <article class="tnc-size-tool-card">
               <div class="tnc-size-tool-visual">
                 <span class="tnc-size-tool-name">Chuỗi Hạt</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="6" cy="12" r="2"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
-                  <circle cx="18" cy="12" r="2"></circle>
-                  <path d="M8 12h2"></path>
-                  <path d="M14 12h2"></path>
-                </svg>
+                <img src="../assets/images/tools/card-cong-cu-tinh-hat-chuoi.png" alt="Công cụ tính số hạt chuỗi vòng phỉ thúy" />
               </div>
               <div class="tnc-size-tool-body">
                 <p class="tnc-size-tool-label">Bead calculator</p>
@@ -151,12 +139,9 @@
             </article>
 
             <article class="tnc-size-tool-card">
-              <div class="tnc-size-tool-visual">
+              <div class="tnc-size-tool-visual tnc-size-tool-visual-fill">
                 <span class="tnc-size-tool-name">Nhẫn</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="13" r="5"></circle>
-                  <path d="M9 8 12 4l3 4"></path>
-                </svg>
+                <img src="../assets/images/tools/card-cong-cu-do-size-nhan.png" alt="Công cụ đo size nhẫn ngọc" />
               </div>
               <div class="tnc-size-tool-body">
                 <p class="tnc-size-tool-label">Ring sizer</p>
@@ -178,9 +163,7 @@
       <section class="tnc-size-why-section">
         <div class="tnc-container-narrow tnc-size-why-grid">
           <div class="tnc-size-why-visual">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="m12 3 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.3 6.8 19l1-5.8-4.2-4.1 5.8-.8z"></path>
-            </svg>
+            <img src="../assets/images/tools/tai-sao-do-size-chuan-quan-trong.png" alt="Lý do cần đo size trang sức ngọc chính xác" />
             <span class="tnc-size-why-caption">Phỉ thúy chính phẩm</span>
           </div>
           <div>
@@ -315,6 +298,24 @@
 
       <section class="tnc-size-final-section">
         <div class="tnc-container">
+          <aside class="tnc-share-actions tnc-share-actions-centered tnc-size-tools-share" aria-label="Chia sẻ">
+            <div class="tnc-share-copy">
+              <p class="tnc-section-kicker">Chia sẻ</p>
+              <p class="tnc-share-title">Chia sẻ bộ công cụ đo size</p>
+              <p class="tnc-share-text">Gửi trang này cho người cần đo vòng tay, nhẫn hoặc tính số hạt trước khi chọn ngọc.</p>
+            </div>
+            <div class="tnc-share-buttons">
+              <a class="tnc-share-button" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener noreferrer" data-share-facebook aria-label="Chia sẻ bộ công cụ lên Facebook">
+                <svg class="tnc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <span>Facebook</span>
+              </a>
+              <button class="tnc-share-button" type="button" data-copy-link data-copy-label="Sao chép link" data-copy-success="Đã sao chép">
+                <svg class="tnc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span data-copy-text>Sao chép link</span>
+              </button>
+            </div>
+          </aside>
+
           <div class="tnc-post-final-cta">
             <p class="tnc-post-final-cta-kicker">Khởi hành bắt đầu</p>
             <h2 class="tnc-post-final-cta-title">Sẵn Sàng Tìm <span class="text-secondary">Size Hoàn Hảo?</span></h2>
@@ -359,16 +360,16 @@
           <button class="tnc-search-close" type="button" aria-label="Đóng tìm kiếm" data-search-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
         </div>
         <div class="tnc-search-body">
-          <form class="tnc-search-form" action="./search.html" method="get"><input type="search" name="s" placeholder="Tìm vòng tay, nhẫn, chủng, Type A..." autocomplete="off" data-search-input /><button type="submit">Tìm kiếm</button></form>
-          <div class="tnc-search-suggest"><button type="button" data-search-suggest="vòng tay">Vòng tay</button><button type="button" data-search-suggest="nhẫn">Nhẫn</button><button type="button" data-search-suggest="chuỗi hạt">Chuỗi hạt</button><button type="button" data-search-suggest="type a">Type A</button><button type="button" data-search-suggest="đo size">Đo size</button></div>
+          <form class="tnc-search-form" action="./search.html" method="get"><label for="search-input" class="sr-only">Tìm kiếm sản phẩm</label><input id="search-input" type="search" name="s" placeholder="Tìm vòng tay, nhẫn, chủng, Type A..." autocomplete="off" data-search-input /><button type="submit">Tìm</button></form>
+          <div class="tnc-search-suggest"><button type="button" data-search-suggest="vòng tay">Vòng tay</button><button type="button" data-search-suggest="nhẫn">Nhẫn</button><button type="button" data-search-suggest="chuỗi hạt">Chuỗi hạt</button><button type="button" data-search-suggest="type a"><span lang="en">Type A</span></button><button type="button" data-search-suggest="đo size">Đo size</button></div>
           <div class="tnc-search-grid">
             <div><h3 class="tnc-search-section-title">Gợi ý nổi bật</h3><div class="tnc-search-results">
-              <a href="./product-archive.html" class="tnc-search-item" data-search-item="vòng tay phỉ thúy type a myanmar"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-bracelet.svg" alt="Vòng tay phỉ thúy" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Vòng tay phỉ thúy Type A</span><span class="tnc-search-desc">Tuyển chọn vòng ngọc Myanmar theo size và chất ngọc.</span></span></a>
+              <a href="./product-archive.html" class="tnc-search-item" data-search-item="vòng tay phỉ thúy type a myanmar"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-bracelet.svg" alt="Vòng tay phỉ thúy" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Vòng tay phỉ thúy <span lang="en">Type A</span></span><span class="tnc-search-desc">Tuyển chọn vòng ngọc Myanmar theo size và chất ngọc.</span></span></a>
               <a href="./product-archive.html" class="tnc-search-item" data-search-item="nhẫn ngọc phỉ thúy size nhẫn"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-ring.svg" alt="Nhẫn ngọc" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Nhẫn ngọc phỉ thúy</span><span class="tnc-search-desc">Các mẫu nhẫn ngọc phù hợp nhiều size tay.</span></span></a>
-              <a href="./blog-archive.html" class="tnc-search-item" data-search-item="type a chủng màu sắc kiến thức phỉ thúy"><span class="tnc-search-thumb"><img src="../assets/images/articles/article-jade-seed.svg" alt="Kiến thức phỉ thúy" /></span><span><span class="tnc-search-meta">Bài viết</span><span class="tnc-search-name">Cẩm nang phỉ thúy Type A</span><span class="tnc-search-desc">Hiểu về chủng, thủy, màu sắc và kiểm định.</span></span></a>
+              <a href="./blog-archive.html" class="tnc-search-item" data-search-item="type a chủng màu sắc kiến thức phỉ thúy"><span class="tnc-search-thumb"><img src="../assets/images/articles/article-jade-seed.svg" alt="Kiến thức phỉ thúy" /></span><span><span class="tnc-search-meta">Bài viết</span><span class="tnc-search-name">Cẩm nang phỉ thúy <span lang="en">Type A</span></span><span class="tnc-search-desc">Hiểu về chủng, thủy, màu sắc và kiểm định.</span></span></a>
               <a href="./size-tools.html" class="tnc-search-item" data-search-item="đo size vòng tay nhẫn chuỗi hạt công cụ"><span class="tnc-search-thumb"><img src="../assets/images/products/product-jade-02.svg" alt="Công cụ đo size" /></span><span><span class="tnc-search-meta">Công cụ</span><span class="tnc-search-name">Đo size trang sức ngọc</span><span class="tnc-search-desc">Tìm size vòng, nhẫn và số hạt chuỗi phù hợp.</span></span></a>
             </div><p class="tnc-search-empty" data-search-empty>Không thấy gợi ý phù hợp. Bạn có thể nhắn Zalo để Thanh Ngọc Các hỗ trợ tìm sản phẩm.</p></div>
-            <div><h3 class="tnc-search-section-title">Đi nhanh</h3><div class="tnc-search-quick"><a href="./product-archive.html">Xem toàn bộ sản phẩm</a><a href="./size-tools.html">Công cụ đo size</a><a href="./blog-archive.html">Cẩm nang phỉ thúy</a><a href="./contact.html">Liên hệ tư vấn 1-1</a></div></div>
+            <div><h3 class="tnc-search-section-title">Đi nhanh</h3><div class="tnc-search-quick"><a href="./product-archive.html">Khám phá bộ sưu tập</a><a href="./size-tools.html">Công cụ đo size</a><a href="./blog-archive.html">Cẩm nang phỉ thúy</a><a href="./contact.html">Liên hệ tư vấn 1-1</a></div></div>
           </div>
         </div>
       </section>
@@ -382,7 +383,7 @@
               <img class="tnc-footer-logo" src="../assets/images/logo/thanhngoccac-logo.png" alt="Thanh Ngọc Các" />
               <span>THANH NGỌC CÁC</span>
             </a>
-            <p class="tnc-footer-about">Curated house dành cho phỉ thúy Myanmar Type A: tuyển chọn bằng tri thức, trình bày bằng gu thẩm mỹ và tư vấn bằng sự cẩn trọng.</p>
+            <p class="tnc-footer-about">Curated house dành cho phỉ thúy Myanmar <span lang="en">Type A</span>: tuyển chọn bằng tri thức, trình bày bằng gu thẩm mỹ và tư vấn bằng sự cẩn trọng.</p>
             <div class="tnc-footer-socials"><a href="#" class="tnc-footer-social">Zalo</a><a href="#" class="tnc-footer-social">Facebook</a><a href="#" class="tnc-footer-social">TikTok</a></div>
           </div>
           <div><h2 class="tnc-footer-title">Điều hướng</h2><ul class="tnc-footer-links"><li><a href="../index.html">Trang chủ</a></li><li><a href="./about.html">Về chúng tôi</a></li><li><a href="./blog-archive.html">Cẩm nang phỉ thúy</a></li><li><a href="./contact.html">Liên hệ</a></li></ul></div>
@@ -423,7 +424,7 @@
           <svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
           </svg>
-          <span>Xem thêm</span>
+          <span>Thêm</span>
         </a>
       </div>
     </nav>

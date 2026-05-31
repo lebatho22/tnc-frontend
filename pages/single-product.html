@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&subset=vietnamese&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../output.css" />
@@ -15,7 +15,7 @@
 
   <body class="bg-accent text-primary">
     <div class="tnc-topbar" data-topbar>
-      Tư vấn phỉ thúy Type A · Showroom Hà Nội
+      Tư vấn phỉ thúy <span lang="en">Type A</span> · Showroom Hà Nội
     </div>
     <header class="tnc-header" data-site-header>
       <div class="tnc-container tnc-header-inner">
@@ -30,10 +30,10 @@
 
         <nav class="tnc-nav" aria-label="Điều hướng chính">
           <a href="../index.html" class="tnc-nav-link">Trang chủ</a>
-          <a href="./blog-archive.html" class="tnc-nav-link">Bài viết</a>
-          <a href="./size-tools.html" class="tnc-nav-link">Công Cụ Đo Size</a>
-          <a href="./product-archive.html" class="tnc-nav-link is-active">Cửa hàng</a>
-          <a href="./contact.html" class="tnc-nav-link">Liên Hệ</a>
+          <a href="./contact.html" class="tnc-nav-link">Liên hệ</a>
+          <a href="./product-archive.html" class="tnc-nav-link is-active">Bộ sưu tập</a>
+          <a href="./blog-archive.html" class="tnc-nav-link">Kiến thức</a>
+          <a href="./size-tools.html" class="tnc-nav-link">Công cụ đo size</a>
         </nav>
 
         <a class="tnc-desktop-search" href="#" aria-label="Tìm kiếm" data-search-open>
@@ -64,7 +64,7 @@
         <div class="tnc-container tnc-single-product-grid">
           <div class="tnc-single-gallery-wrap">
             <div class="tnc-single-gallery">
-              <span class="tnc-single-sale">Type A · Selected</span>
+              <span class="tnc-single-sale"><span lang="en">Type A</span> · Selected</span>
               <img
                 src="../assets/images/products/product-jade-01.svg"
                 alt="Vòng tay phỉ thúy băng hoa bay loại A Myanmar"
@@ -88,7 +88,7 @@
           </div>
 
           <article class="tnc-single-content">
-            <p class="tnc-single-breadcrumb">Thanh Ngọc Các · Ngọc Phỉ Thúy Type A</p>
+            <p class="tnc-single-breadcrumb">Thanh Ngọc Các · Ngọc Phỉ Thúy <span lang="en">Type A</span></p>
             <h1 class="tnc-single-title">
               Vòng tay phỉ thúy băng hoa bay loại A Myanmar
               <span class="tnc-title-nowrap">LUX-010126001</span>
@@ -241,7 +241,7 @@
                     <dl class="tnc-product-spec-list">
                       <div class="tnc-product-spec-row">
                         <dt>Loại ngọc</dt>
-                        <dd>Ngọc Phỉ Thúy Type A</dd>
+                        <dd>Ngọc Phỉ Thúy <span lang="en">Type A</span></dd>
                       </div>
                       <div class="tnc-product-spec-row">
                         <dt>Xuất xứ</dt>
@@ -368,7 +368,7 @@
                 <dl class="tnc-product-spec-list">
                   <div class="tnc-product-spec-row">
                     <dt>Loại ngọc</dt>
-                    <dd>Ngọc Phỉ Thúy Type A</dd>
+                    <dd>Ngọc Phỉ Thúy <span lang="en">Type A</span></dd>
                   </div>
                   <div class="tnc-product-spec-row">
                     <dt>Xuất xứ</dt>
@@ -593,16 +593,16 @@
           <button class="tnc-search-close" type="button" aria-label="Đóng tìm kiếm" data-search-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
         </div>
         <div class="tnc-search-body">
-          <form class="tnc-search-form" action="./search.html" method="get"><input type="search" name="s" placeholder="Tìm vòng tay, nhẫn, chủng, Type A..." autocomplete="off" data-search-input /><button type="submit">Tìm kiếm</button></form>
-          <div class="tnc-search-suggest"><button type="button" data-search-suggest="vòng tay">Vòng tay</button><button type="button" data-search-suggest="nhẫn">Nhẫn</button><button type="button" data-search-suggest="chuỗi hạt">Chuỗi hạt</button><button type="button" data-search-suggest="type a">Type A</button><button type="button" data-search-suggest="đo size">Đo size</button></div>
+          <form class="tnc-search-form" action="./search.html" method="get"><label for="search-input" class="sr-only">Tìm kiếm sản phẩm</label><input id="search-input" type="search" name="s" placeholder="Tìm vòng tay, nhẫn, chủng, Type A..." autocomplete="off" data-search-input /><button type="submit">Tìm</button></form>
+          <div class="tnc-search-suggest"><button type="button" data-search-suggest="vòng tay">Vòng tay</button><button type="button" data-search-suggest="nhẫn">Nhẫn</button><button type="button" data-search-suggest="chuỗi hạt">Chuỗi hạt</button><button type="button" data-search-suggest="type a"><span lang="en">Type A</span></button><button type="button" data-search-suggest="đo size">Đo size</button></div>
           <div class="tnc-search-grid">
             <div><h3 class="tnc-search-section-title">Gợi ý nổi bật</h3><div class="tnc-search-results">
-              <a href="./product-archive.html" class="tnc-search-item" data-search-item="vòng tay phỉ thúy type a myanmar"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-bracelet.svg" alt="Vòng tay phỉ thúy" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Vòng tay phỉ thúy Type A</span><span class="tnc-search-desc">Tuyển chọn vòng ngọc Myanmar theo size và chất ngọc.</span></span></a>
+              <a href="./product-archive.html" class="tnc-search-item" data-search-item="vòng tay phỉ thúy type a myanmar"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-bracelet.svg" alt="Vòng tay phỉ thúy" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Vòng tay phỉ thúy <span lang="en">Type A</span></span><span class="tnc-search-desc">Tuyển chọn vòng ngọc Myanmar theo size và chất ngọc.</span></span></a>
               <a href="./product-archive.html" class="tnc-search-item" data-search-item="nhẫn ngọc phỉ thúy size nhẫn"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-ring.svg" alt="Nhẫn ngọc" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Nhẫn ngọc phỉ thúy</span><span class="tnc-search-desc">Các mẫu nhẫn ngọc phù hợp nhiều size tay.</span></span></a>
-              <a href="./blog-archive.html" class="tnc-search-item" data-search-item="type a chủng màu sắc kiến thức phỉ thúy"><span class="tnc-search-thumb"><img src="../assets/images/articles/article-jade-seed.svg" alt="Kiến thức phỉ thúy" /></span><span><span class="tnc-search-meta">Bài viết</span><span class="tnc-search-name">Cẩm nang phỉ thúy Type A</span><span class="tnc-search-desc">Hiểu về chủng, thủy, màu sắc và kiểm định.</span></span></a>
+              <a href="./blog-archive.html" class="tnc-search-item" data-search-item="type a chủng màu sắc kiến thức phỉ thúy"><span class="tnc-search-thumb"><img src="../assets/images/articles/article-jade-seed.svg" alt="Kiến thức phỉ thúy" /></span><span><span class="tnc-search-meta">Bài viết</span><span class="tnc-search-name">Cẩm nang phỉ thúy <span lang="en">Type A</span></span><span class="tnc-search-desc">Hiểu về chủng, thủy, màu sắc và kiểm định.</span></span></a>
               <a href="./size-tools.html" class="tnc-search-item" data-search-item="đo size vòng tay nhẫn chuỗi hạt công cụ"><span class="tnc-search-thumb"><img src="../assets/images/products/product-jade-02.svg" alt="Công cụ đo size" /></span><span><span class="tnc-search-meta">Công cụ</span><span class="tnc-search-name">Đo size trang sức ngọc</span><span class="tnc-search-desc">Tìm size vòng, nhẫn và số hạt chuỗi phù hợp.</span></span></a>
             </div><p class="tnc-search-empty" data-search-empty>Không thấy gợi ý phù hợp. Bạn có thể nhắn Zalo để Thanh Ngọc Các hỗ trợ tìm sản phẩm.</p></div>
-            <div><h3 class="tnc-search-section-title">Đi nhanh</h3><div class="tnc-search-quick"><a href="./product-archive.html">Xem toàn bộ sản phẩm</a><a href="./size-tools.html">Công cụ đo size</a><a href="./blog-archive.html">Cẩm nang phỉ thúy</a><a href="./contact.html">Liên hệ tư vấn 1-1</a></div></div>
+            <div><h3 class="tnc-search-section-title">Đi nhanh</h3><div class="tnc-search-quick"><a href="./product-archive.html">Khám phá bộ sưu tập</a><a href="./size-tools.html">Công cụ đo size</a><a href="./blog-archive.html">Cẩm nang phỉ thúy</a><a href="./contact.html">Liên hệ tư vấn 1-1</a></div></div>
           </div>
         </div>
       </section>
@@ -616,7 +616,7 @@
               <img class="tnc-footer-logo" src="../assets/images/logo/thanhngoccac-logo.png" alt="Thanh Ngọc Các" />
               <span>THANH NGỌC CÁC</span>
             </a>
-            <p class="tnc-footer-about">Curated house dành cho phỉ thúy Myanmar Type A: tuyển chọn bằng tri thức, trình bày bằng gu thẩm mỹ và tư vấn bằng sự cẩn trọng.</p>
+            <p class="tnc-footer-about">Curated house dành cho phỉ thúy Myanmar <span lang="en">Type A</span>: tuyển chọn bằng tri thức, trình bày bằng gu thẩm mỹ và tư vấn bằng sự cẩn trọng.</p>
             <div class="tnc-footer-socials"><a href="#" class="tnc-footer-social">Zalo</a><a href="#" class="tnc-footer-social">Facebook</a><a href="#" class="tnc-footer-social">TikTok</a></div>
           </div>
           <div><h2 class="tnc-footer-title">Điều hướng</h2><ul class="tnc-footer-links"><li><a href="../index.html">Trang chủ</a></li><li><a href="./about.html">Về chúng tôi</a></li><li><a href="./blog-archive.html">Cẩm nang phỉ thúy</a></li><li><a href="./contact.html">Liên hệ</a></li></ul></div>
@@ -668,7 +668,7 @@
             <circle cx="19" cy="12" r="1"></circle>
             <circle cx="5" cy="12" r="1"></circle>
           </svg>
-          <span>Xem thêm</span>
+          <span>Thêm</span>
         </a>
       </div>
     </nav>

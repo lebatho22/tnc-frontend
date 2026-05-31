@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&subset=vietnamese&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../output.css" />
@@ -15,7 +15,7 @@
 
   <body class="bg-accent text-primary">
     <div class="tnc-topbar" data-topbar>
-      Tư vấn phỉ thúy Type A · Showroom Hà Nội
+      Tư vấn phỉ thúy <span lang="en">Type A</span> · Showroom Hà Nội
     </div>
     <header class="tnc-header" data-site-header>
       <div class="tnc-container tnc-header-inner">
@@ -25,10 +25,10 @@
         </a>
         <nav class="tnc-nav" aria-label="Điều hướng chính">
           <a href="../index.html" class="tnc-nav-link">Trang chủ</a>
-          <a href="./blog-archive.html" class="tnc-nav-link">Bài viết</a>
-          <a href="./size-tools.html" class="tnc-nav-link is-active">Công Cụ Đo Size</a>
-          <a href="./product-archive.html" class="tnc-nav-link">Cửa hàng</a>
-          <a href="./contact.html" class="tnc-nav-link">Liên Hệ</a>
+          <a href="./contact.html" class="tnc-nav-link">Liên hệ</a>
+          <a href="./product-archive.html" class="tnc-nav-link">Bộ sưu tập</a>
+          <a href="./blog-archive.html" class="tnc-nav-link">Kiến thức</a>
+          <a href="./size-tools.html" class="tnc-nav-link is-active">Công cụ đo size</a>
         </nav>
         <a class="tnc-desktop-search" href="#" aria-label="Tìm kiếm" data-search-open>
           <svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -184,6 +184,28 @@
         </div>
       </section>
 
+      <section class="tnc-tool-share-section">
+        <div class="tnc-container-narrow">
+          <aside class="tnc-share-actions tnc-share-actions-centered tnc-share-actions-compact" aria-label="Chia sẻ">
+            <div class="tnc-share-copy">
+              <p class="tnc-section-kicker">Chia sẻ</p>
+              <p class="tnc-share-title">Gửi công cụ đo size nhẫn</p>
+              <p class="tnc-share-text">Chia sẻ link này để người thân tự đo đường kính hoặc chu vi nhẫn tại nhà.</p>
+            </div>
+            <div class="tnc-share-buttons">
+              <a class="tnc-share-button" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener noreferrer" data-share-facebook aria-label="Chia sẻ công cụ đo size nhẫn lên Facebook">
+                <svg class="tnc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <span>Facebook</span>
+              </a>
+              <button class="tnc-share-button" type="button" data-copy-link data-copy-label="Sao chép link" data-copy-success="Đã sao chép">
+                <svg class="tnc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span data-copy-text>Sao chép link</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
       <section class="tnc-bracelet-products tnc-ring-products">
         <div class="tnc-container">
           <div class="tnc-section-heading">
@@ -224,7 +246,7 @@
                 <img src="../assets/images/products/product-jade-02.svg" alt="Nhẫn phỉ thúy băng thanh" />
               </div>
               <div class="tnc-product-body">
-                <p class="tnc-product-meta">Nhẫn ngọc · Type A</p>
+                <p class="tnc-product-meta">Nhẫn ngọc · <span lang="en">Type A</span></p>
                 <h3 class="tnc-product-name">Nhẫn phỉ thúy băng thanh tối giản</h3>
                 <div class="tnc-product-separator">+</div>
                 <a href="./product-archive.html" class="tnc-product-link">Xem chi tiết</a>
@@ -262,30 +284,31 @@
               <p>Đây là cách chính xác nhất nếu bạn đã có một chiếc nhẫn vừa với ngón tay muốn đeo.</p>
               <ul>
                 <li>Đặt nhẫn úp xuống mặt phẳng.</li>
-                <li>Dùng thước đo đường kính bên trong nhẫn.</li>
+                <li>Dùng thước kẹp hoặc thước thẳng đo đường kính bên trong nhẫn từ mép này sang mép kia, đi qua tâm.</li>
                 <li>Ghi lại số đo chính xác đến 0.1mm.</li>
-                <li>Đo lại 2-3 lần để đảm bảo.</li>
+                <li>Đo lại 2-3 lần để đảm bảo, lấy giá trị trung bình.</li>
               </ul>
             </article>
             <article>
               <strong>2</strong>
               <h3>Đo trực tiếp quanh ngón tay</h3>
-              <p>Áp dụng khi bạn chưa có nhẫn cũ hoặc muốn đeo ngón khác.</p>
+              <p>Áp dụng khi bạn không có nhẫn cũ hoặc nhẫn cũ đeo ngón khác.</p>
               <ul>
-                <li>Cắt một dải giấy nhỏ rộng khoảng 5mm.</li>
-                <li>Quấn quanh đốt giữa ngón tay.</li>
+                <li>Cắt 1 dải giấy nhỏ rộng ~5mm, dài 10cm (hoặc dùng chỉ may).</li>
+                <li>Quấn quanh đốt giữa ngón tay nơi sẽ đeo nhẫn — vừa khít, không lỏng cũng không siết.</li>
                 <li>Đánh dấu điểm hai đầu giao nhau.</li>
-                <li>Tháo ra và đo chiều dài từ đầu giấy đến vạch.</li>
+                <li>Tháo ra, đo độ dài từ đầu giấy đến vạch đánh dấu = chu vi ngón.</li>
               </ul>
             </article>
           </div>
           <div class="tnc-ring-expert-note">
             <h3>🎯 Mẹo đo chính xác từ chuyên gia</h3>
             <ul>
-              <li><strong>Đo vào buổi chiều:</strong> ngón tay có kích thước trung bình.</li>
-              <li><strong>Tránh đo khi nóng/lạnh:</strong> nhiệt độ có thể làm lệch 0.3-0.5mm.</li>
-              <li><strong>Đo sau khi đã ăn uống bình thường:</strong> tránh đo sau vận động mạnh.</li>
-              <li><strong>Tay thuận lớn hơn tay không thuận:</strong> cùng một ngón nhưng hai tay có thể lệch 0.5-1 size.</li>
+              <li><strong>Đo vào buổi chiều:</strong> Ngón tay có kích thước trung bình. Tránh đo lúc sáng sớm (ngón gầy) hoặc tối muộn (ngón sưng).</li>
+              <li><strong>Tránh đo khi nóng/lạnh:</strong> Nhiệt độ ảnh hưởng đến kích thước ngón tay ±0.3-0.5mm.</li>
+              <li><strong>Đo sau khi đã ăn uống bình thường:</strong> Tránh đo sau khi ăn mặn hoặc tập thể thao.</li>
+              <li><strong>Đo qua đốt cao nhất:</strong> Đảm bảo nhẫn lọt qua được khớp ngón, không bị vướng.</li>
+              <li><strong>Tay thuận lớn hơn tay không thuận:</strong> Cùng 1 ngón nhưng tay phải/trái có thể chênh 0.5-1 size.</li>
             </ul>
           </div>
         </div>
@@ -331,10 +354,14 @@
             <h2 class="tnc-section-title">Giải Đáp Về Size Nhẫn Ngọc</h2>
           </div>
           <div class="tnc-faq-list">
-            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Đo size nhẫn vào thời điểm nào trong ngày là chính xác nhất?</span><span class="tnc-faq-plus">+</span></summary><p class="tnc-faq-answer">Nên đo vào buổi chiều hoặc tối, khi ngón tay ở kích thước trung bình.</p></details>
-            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Nhẫn ngọc có dung sai bao nhiêu là chấp nhận được?</span><span class="tnc-faq-plus">+</span></summary><p class="tnc-faq-answer">Dung sai chế tác khoảng ±0.3mm là bình thường với nhẫn ngọc tự nhiên.</p></details>
-            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Size nhẫn của tôi nằm giữa 2 size, nên chọn size lớn hay nhỏ?</span><span class="tnc-faq-plus">+</span></summary><p class="tnc-faq-answer">Nếu khớp ngón tay lớn, nên chọn size lớn hơn. Nếu thích ôm tay, chọn size nhỏ hơn.</p></details>
-            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Tôi có thể đổi size nhẫn ngọc sau khi mua không?</span><span class="tnc-faq-plus">+</span></summary><p class="tnc-faq-answer">Tùy mẫu nhẫn. Nhẫn ngọc nguyên khối thường không thể sửa size như nhẫn kim loại.</p></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Đo size nhẫn vào thời điểm nào trong ngày là chính xác nhất?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Thời điểm tốt nhất là buổi chiều khoảng 14h-17h — lúc ngón tay có kích thước trung bình. Sáng sớm ngón tay thường gầy hơn do mất nước qua đêm, tối muộn lại sưng do hoạt động cả ngày. Tránh đo sau khi ăn mặn, uống nhiều nước hoặc tập thể thao.</p></div></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Nhẫn ngọc có dung sai bao nhiêu là chấp nhận được?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Nhẫn ngọc tự nhiên có dung sai chuẩn ngành là ±0.3mm. Tức là nếu bạn cần size 16.5mm thì nhẫn 16.2mm hoặc 16.8mm vẫn có thể đeo vừa. Vì ngọc thật được đẽo thủ công và mỗi viên có vân đá khác nhau, không thể chuẩn 100% như nhẫn vàng máy đúc.</p></div></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Size nhẫn của tôi nằm giữa 2 size, nên chọn size lớn hay nhỏ?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Khuyến nghị chọn size lớn hơn 1 cỡ nếu bạn ở giữa 2 size. Lý do: ngón tay sẽ to dần theo tuổi, mùa hè ngón sưng hơn mùa đông, và nhẫn ngọc cần lọt qua khớp ngón mà không vướng. Nếu chật quá, nhẫn có thể khó tháo ra khi cần thiết.</p></div></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Đo bằng dây/giấy có chính xác không?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Có, nhưng độ chính xác phụ thuộc vào kỹ thuật đo. Nên dùng dây hoặc giấy không co giãn, giấy trắng văn phòng cắt mỏng là tốt nhất. Quấn vừa khít — không lỏng, không siết. Đo 3 lần liên tiếp, lấy giá trị trung bình. Nếu có thể, nên đối chiếu thêm bằng cách đo nhẫn cũ.</p></div></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Size nhẫn nữ Việt Nam phổ biến nhất là bao nhiêu?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Theo thống kê của ngành trang sức Việt Nam, size phổ biến nhất cho nữ là size 7-9, đường kính 15.5-16.5mm, tương ứng với các ngón áp út hoặc ngón giữa của phụ nữ trưởng thành. Nam giới phổ biến size 12-15, đường kính 18.0-19.5mm. Tuy nhiên size phụ thuộc nhiều vào thể trạng cá nhân, không nên áp dụng máy móc.</p></div></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Tôi có thể đổi size nhẫn ngọc sau khi mua không?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Tại Thanh Ngọc Các, bạn được đổi size 1 lần miễn phí trong vòng 7 ngày kể từ khi nhận hàng nếu nhẫn còn nguyên trạng, chưa đeo. Lưu ý: nhẫn ngọc không thể nong rộng hoặc thu hẹp như nhẫn vàng vì cấu trúc đá đặc, nên đổi size nghĩa là đổi sang viên ngọc khác có size phù hợp.</p></div></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Sự khác biệt giữa size VN, US, JP, HK?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Mỗi quốc gia có hệ size riêng:</p><ul><li>Việt Nam (VN): đánh số từ 4-19, đo theo đường kính trong (mm).</li><li>US (Mỹ): đánh số 3-13 với bước 0.5, dùng phổ biến quốc tế.</li><li>Japan (JP): đánh số 1-27, đo theo chu vi nhẫn.</li><li>Hong Kong (HK): đánh số 1-30, dùng phổ biến ở Trung Quốc và châu Á.</li></ul><p>Tham khảo bảng quy đổi phía trên để có giá trị chính xác.</p></div></details>
+            <details class="tnc-faq-item"><summary class="tnc-faq-question"><span class="tnc-faq-title">Ngón nào nên đeo nhẫn ngọc theo phong thủy?</span><span class="tnc-faq-plus">+</span></summary><div class="tnc-faq-answer"><p>Theo phong thủy phương Đông, mỗi ngón mang ý nghĩa khác nhau:</p><ul><li>Ngón cái: quyền lực, sự nghiệp, lãnh đạo.</li><li>Ngón trỏ: tham vọng, định hướng cuộc đời.</li><li>Ngón giữa: cân bằng, ổn định.</li><li>Ngón áp út: tình duyên, hôn nhân truyền thống.</li><li>Ngón út: may mắn, tiền tài, sự khôn ngoan.</li></ul><p>Nhẫn ngọc thường được đeo ở ngón áp út hoặc ngón giữa để tăng cường năng lượng tích cực.</p></div></details>
           </div>
         </div>
       </section>
@@ -386,16 +413,16 @@
           <button class="tnc-search-close" type="button" aria-label="Đóng tìm kiếm" data-search-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
         </div>
         <div class="tnc-search-body">
-          <form class="tnc-search-form" action="./search.html" method="get"><input type="search" name="s" placeholder="Tìm vòng tay, nhẫn, chủng, Type A..." autocomplete="off" data-search-input /><button type="submit">Tìm kiếm</button></form>
-          <div class="tnc-search-suggest"><button type="button" data-search-suggest="vòng tay">Vòng tay</button><button type="button" data-search-suggest="nhẫn">Nhẫn</button><button type="button" data-search-suggest="chuỗi hạt">Chuỗi hạt</button><button type="button" data-search-suggest="type a">Type A</button><button type="button" data-search-suggest="đo size">Đo size</button></div>
+          <form class="tnc-search-form" action="./search.html" method="get"><label for="search-input" class="sr-only">Tìm kiếm sản phẩm</label><input id="search-input" type="search" name="s" placeholder="Tìm vòng tay, nhẫn, chủng, Type A..." autocomplete="off" data-search-input /><button type="submit">Tìm</button></form>
+          <div class="tnc-search-suggest"><button type="button" data-search-suggest="vòng tay">Vòng tay</button><button type="button" data-search-suggest="nhẫn">Nhẫn</button><button type="button" data-search-suggest="chuỗi hạt">Chuỗi hạt</button><button type="button" data-search-suggest="type a"><span lang="en">Type A</span></button><button type="button" data-search-suggest="đo size">Đo size</button></div>
           <div class="tnc-search-grid">
             <div><h3 class="tnc-search-section-title">Gợi ý nổi bật</h3><div class="tnc-search-results">
-              <a href="./product-archive.html" class="tnc-search-item" data-search-item="vòng tay phỉ thúy type a myanmar"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-bracelet.svg" alt="Vòng tay phỉ thúy" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Vòng tay phỉ thúy Type A</span><span class="tnc-search-desc">Tuyển chọn vòng ngọc Myanmar theo size và chất ngọc.</span></span></a>
+              <a href="./product-archive.html" class="tnc-search-item" data-search-item="vòng tay phỉ thúy type a myanmar"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-bracelet.svg" alt="Vòng tay phỉ thúy" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Vòng tay phỉ thúy <span lang="en">Type A</span></span><span class="tnc-search-desc">Tuyển chọn vòng ngọc Myanmar theo size và chất ngọc.</span></span></a>
               <a href="./product-archive.html" class="tnc-search-item" data-search-item="nhẫn ngọc phỉ thúy size nhẫn"><span class="tnc-search-thumb"><img src="../assets/images/collections/collection-ring.svg" alt="Nhẫn ngọc" /></span><span><span class="tnc-search-meta">Sản phẩm</span><span class="tnc-search-name">Nhẫn ngọc phỉ thúy</span><span class="tnc-search-desc">Các mẫu nhẫn ngọc phù hợp nhiều size tay.</span></span></a>
-              <a href="./blog-archive.html" class="tnc-search-item" data-search-item="type a chủng màu sắc kiến thức phỉ thúy"><span class="tnc-search-thumb"><img src="../assets/images/articles/article-jade-seed.svg" alt="Kiến thức phỉ thúy" /></span><span><span class="tnc-search-meta">Bài viết</span><span class="tnc-search-name">Cẩm nang phỉ thúy Type A</span><span class="tnc-search-desc">Hiểu về chủng, thủy, màu sắc và kiểm định.</span></span></a>
+              <a href="./blog-archive.html" class="tnc-search-item" data-search-item="type a chủng màu sắc kiến thức phỉ thúy"><span class="tnc-search-thumb"><img src="../assets/images/articles/article-jade-seed.svg" alt="Kiến thức phỉ thúy" /></span><span><span class="tnc-search-meta">Bài viết</span><span class="tnc-search-name">Cẩm nang phỉ thúy <span lang="en">Type A</span></span><span class="tnc-search-desc">Hiểu về chủng, thủy, màu sắc và kiểm định.</span></span></a>
               <a href="./size-tools.html" class="tnc-search-item" data-search-item="đo size vòng tay nhẫn chuỗi hạt công cụ"><span class="tnc-search-thumb"><img src="../assets/images/products/product-jade-02.svg" alt="Công cụ đo size" /></span><span><span class="tnc-search-meta">Công cụ</span><span class="tnc-search-name">Đo size trang sức ngọc</span><span class="tnc-search-desc">Tìm size vòng, nhẫn và số hạt chuỗi phù hợp.</span></span></a>
             </div><p class="tnc-search-empty" data-search-empty>Không thấy gợi ý phù hợp. Bạn có thể nhắn Zalo để Thanh Ngọc Các hỗ trợ tìm sản phẩm.</p></div>
-            <div><h3 class="tnc-search-section-title">Đi nhanh</h3><div class="tnc-search-quick"><a href="./product-archive.html">Xem toàn bộ sản phẩm</a><a href="./size-tools.html">Công cụ đo size</a><a href="./blog-archive.html">Cẩm nang phỉ thúy</a><a href="./contact.html">Liên hệ tư vấn 1-1</a></div></div>
+            <div><h3 class="tnc-search-section-title">Đi nhanh</h3><div class="tnc-search-quick"><a href="./product-archive.html">Khám phá bộ sưu tập</a><a href="./size-tools.html">Công cụ đo size</a><a href="./blog-archive.html">Cẩm nang phỉ thúy</a><a href="./contact.html">Liên hệ tư vấn 1-1</a></div></div>
           </div>
         </div>
       </section>
@@ -409,7 +436,7 @@
               <img class="tnc-footer-logo" src="../assets/images/logo/thanhngoccac-logo.png" alt="Thanh Ngọc Các" />
               <span>THANH NGỌC CÁC</span>
             </a>
-            <p class="tnc-footer-about">Curated house dành cho phỉ thúy Myanmar Type A: tuyển chọn bằng tri thức, trình bày bằng gu thẩm mỹ và tư vấn bằng sự cẩn trọng.</p>
+            <p class="tnc-footer-about">Curated house dành cho phỉ thúy Myanmar <span lang="en">Type A</span>: tuyển chọn bằng tri thức, trình bày bằng gu thẩm mỹ và tư vấn bằng sự cẩn trọng.</p>
             <div class="tnc-footer-socials"><a href="#" class="tnc-footer-social">Zalo</a><a href="#" class="tnc-footer-social">Facebook</a><a href="#" class="tnc-footer-social">TikTok</a></div>
           </div>
           <div><h2 class="tnc-footer-title">Điều hướng</h2><ul class="tnc-footer-links"><li><a href="../index.html">Trang chủ</a></li><li><a href="./about.html">Về chúng tôi</a></li><li><a href="./blog-archive.html">Cẩm nang phỉ thúy</a></li><li><a href="./contact.html">Liên hệ</a></li></ul></div>
@@ -426,7 +453,7 @@
         <a href="./product-archive.html" class="tnc-bottom-nav-link"><svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span>Sản phẩm</span></a>
         <a href="./blog-archive.html" class="tnc-bottom-nav-link"><svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg><span>Kiến thức</span></a>
         <a href="./size-tools.html" class="tnc-bottom-nav-link is-active"><svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m16 2 6 6L8 22l-6-6Z"></path><path d="m7.5 10.5 2 2"></path><path d="m10.5 7.5 2 2"></path></svg><span>Công cụ</span></a>
-        <a href="#" class="tnc-bottom-nav-link" data-more-open><svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg><span>Xem thêm</span></a>
+        <a href="#" class="tnc-bottom-nav-link" data-more-open><svg class="tnc-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg><span>Thêm</span></a>
       </div>
     </nav>
 
